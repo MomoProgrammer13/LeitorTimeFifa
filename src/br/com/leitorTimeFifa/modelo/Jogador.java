@@ -114,7 +114,7 @@ public class Jogador {
 	
 	@Override
 	public String toString() {
-		String valorFormatado = String.format("%1$15s      %2$2s      %3$20s      %4$20s      %5$12s", this.nome,this.rating, this.liga, this.clube,this.preco);
+		String valorFormatado = String.format("%-30s %-12s %-20s %-20s %-20s", this.nome,this.rating, this.liga, this.clube,this.preco);
 		return valorFormatado;
 	}
 	
@@ -124,6 +124,13 @@ public class Jogador {
 		}
 		return false;
 	
+	}
+	
+	public boolean cartaParaTroca() {
+		if(this.rating >= 88 && this.emprestimo == false) {
+			return true;
+		}
+		return false;
 	}
 	
 }
